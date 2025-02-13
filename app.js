@@ -25,3 +25,15 @@ console.log(`Exercise 1 Output: ${pokemon[58].name}`);
 
 //Exercise 2
 //console.log(game);
+
+/*
+Exercise 3
+1. Add a new property to the `game` object. Let's call it "difficulty".
+2. Choose a value for "difficulty" that you think fits the game. Ex: "Easy", "Med" or "Hard". How would you assign it?
+
+
+Solve Exercise 3 here:
+*/
+
+game.difficulty = "Easy";
+console.log(game); //check if difficulty is added to game
