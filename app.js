@@ -36,4 +36,24 @@ Solve Exercise 3 here:
 */
 
 game.difficulty = "Easy";
+console.log("Exercise 3 Output");
 console.log(game); //check if difficulty is added to game
+
+/*
+Exercise 4
+1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
+2. Add this Pokémon to the `game.party` array. Which array method will you use to add them?
+
+
+Solve Exercise 4 here:
+*/
+console.log("Exercise 4 Output:");
+console.log("game.party array before adding starter pokemon:");
+console.log(game.party);
+for (let start of pokemon) {
+  if (start.starter == true) {
+    game.party.push(start);
+  }
+}
+console.log("game.party array after adding starter pokemon:");
+console.log(game.party);
