@@ -148,3 +148,19 @@ console.log("Exercise 8 Output");
 //JS has an array method called map() that lets us do this easily
 //It maps from a pokemon object to a pokemon name
 console.log(game.party.map((pokemo) => pokemo.name));
+
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 9 here:
+*/
+
+console.log("Exercise 9 Output");
+for (let pokemo of pokemon) {
+  if (pokemo.starter === true) {
+    console.log(pokemo.name);
+  }
+}
