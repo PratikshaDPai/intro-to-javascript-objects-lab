@@ -51,7 +51,7 @@ console.log("Exercise 4 Output:");
 console.log("game.party array before adding starter pokemon:");
 console.log(game.party);
 for (let start of pokemon) {
-  if (start.starter == true) {
+  if (start.starter == true && start.type === "fire") {
     game.party.push(start);
   }
 }
@@ -66,25 +66,25 @@ Exercise 5
 
 Solve Exercise 5 here:
 */
-// I will consider different types of pokemon+ only add if hp>70
-let hasPsychic = false;
+// I will consider different types of pokemon+ only add if hp>80
+let hasWater = false;
 let hasGround = false;
-let hasFighting = false;
+let hasGrass = false;
 let count = 0;
 for (let pokemo of pokemon) {
   if (count === 3) break;
-  if (pokemo.hp > 70) {
-    if (pokemo.type === "psychic" && !hasPsychic) {
+  if (pokemo.hp > 80) {
+    if (pokemo.type === "water" && !hasWater) {
       game.party.push(pokemo);
-      hasPsychic = true;
+      hasWater = true;
       count++;
     } else if (pokemo.type === "ground" && !hasGround) {
       game.party.push(pokemo);
       hasGround = true;
       count++;
-    } else if (pokemo.type === "fighting" && !hasFighting) {
+    } else if (pokemo.type === "grass" && !hasGrass) {
       game.party.push(pokemo);
-      hasFighting = true;
+      hasGrass = true;
       count++;
     }
   }
@@ -108,3 +108,29 @@ for (let gym of game.gyms) {
 }
 console.log("Exercise 6 Output:");
 console.log(game.gyms);
+
+/*
+Exercise 7
+1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+2. How would you replace the current starter Pokémon in your party with its evolved form?
+
+Hint: 
+  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
+  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+
+More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. When working with an array of objects, the splice() array method is ideal for replacing one element with another. 
+
+
+Solve Exercise 7 here:
+*/
+for (let i = 0; i < game.party.length; i++) {
+  if (start.starter === true) {
+    //Although we know the starter is at the first position, we want to make sure we have the right pokemon even if the array is modified
+    let start = game.party[i];
+    game.party.splice(i, 1, pokemon[start.number]);
+  }
+}
+console.log("Exercise 7 Output:");
+console.log(game.party);
