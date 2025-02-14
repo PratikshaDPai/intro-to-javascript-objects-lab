@@ -420,3 +420,64 @@ for (let i = 6; i < 12; i++) {
 console.log("Items after catching", game.items);
 console.log("Collection", game.collection);
 console.log("Party", game.party);
+
+/*
+Exercise 20
+Copy the `catchPokemon` method that you just wrote above, and paste it below. 
+Modify is so that you can just pass in the name of a Pokemon instead of an entire object, 
+and the method will look up the Pokemon from the data set for you.
+
+The string passed in should be allowed to be any case 
+(for example, if the string 'PiKacHU' is passed to the function, it should match to 'Pikachu' in the data set). 
+
+If there is not a match, then return a string noting that the selected Pokemon does not exist.
+ Ensure you do not decrement the pokeball count if an invalid Pokemon name is passed in, 
+ and also ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 20 here:
+*/
+
+//give myself 5 pokeballs to test
+game.items[1].quantity = 5;
+console.log("Exercise 20 Output");
+console.log("Items before catching", game.items);
+
+game.catchPokemon = (pokemonName) => {
+  //now pokemonObj should be a name, pokemonName
+
+  if (typeof pokemonName !== "string") {
+    console.log("Please pass a valid pokemon name(String)");
+    return;
+  }
+
+  pokemonName = pokemonName.toLowerCase();
+  const pokemonObj = pokemon.find(
+    (pokemo) => pokemo.name.toLowerCase() === pokemonName
+  ); //case insensitive check
+  if (typeof pokemonObj === "undefined") {
+    console.log(`${pokemonName} does not exist in the pokemon dataset`);
+    return;
+  }
+
+  const pokeballItem = game.items.find((item) => item.name === "pokeball");
+  if (pokeballItem.quantity <= 0) {
+    console.log("Not enough pokeballs to catch a pokemon");
+    return; //don't add character to game.party
+  }
+  pokeballItem.quantity--; //find item name matching pokeball and decrement quantity
+  if (game.party.length === 6) {
+    game.collection.push(pokemonObj);
+  } else {
+    game.party.push(pokemonObj);
+  }
+};
+//testing the catchPokemon function
+for (let i = 50; i < 57; i++) {
+  let newPokemon = pokemon[i];
+  if (!game.party.includes(newPokemon)) {
+    game.catchPokemon(newPokemon.name);
+  }
+}
+console.log("Items after catching", game.items);
+console.log("Collection", game.collection);
+console.log("Party", game.party);
