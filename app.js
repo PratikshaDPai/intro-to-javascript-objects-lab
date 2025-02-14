@@ -353,7 +353,7 @@ Solve Exercise 18 here:
 */
 
 console.log("Exercise 18 Output");
-console.log("items before catching", game.items);
+console.log("Items before catching", game.items);
 
 game.collection = [];
 game.catchPokemon = (pokemonObj) => {
@@ -374,6 +374,6 @@ for (let i = 0; i < 12; i++) {
   }
 }
 
-console.log("items after catching", game.items);
-console.log("collection", game.collection);
-console.log("party", game.party);
+console.log("Items after catching", game.items);
+console.log("Collection", game.collection);
+console.log("Party", game.party);
