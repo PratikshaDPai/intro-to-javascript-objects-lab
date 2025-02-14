@@ -126,6 +126,7 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 for (let i = 0; i < game.party.length; i++) {
+  let start = game.party[i];
   if (start.starter === true) {
     //Although we know the starter is at the first position, we want to make sure we have the right pokemon even if the array is modified
     let start = game.party[i];
@@ -134,3 +135,16 @@ for (let i = 0; i < game.party.length; i++) {
 }
 console.log("Exercise 7 Output:");
 console.log(game.party);
+
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 8 here:
+*/
+
+console.log("Exercise 8 Output");
+//JS has an array method called map() that lets us do this easily
+//It maps from a pokemon object to a pokemon name
+console.log(game.party.map((pokemo) => pokemo.name));
