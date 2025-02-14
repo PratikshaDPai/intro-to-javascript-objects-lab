@@ -225,3 +225,42 @@ for (let gym of game.gyms) {
 }
 console.log("Exercise 12 Output:");
 console.log(game.gyms);
+
+/*
+Exercise 13
+1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
+2. How will you iterate through the `gyms` array and update the tally? 
+Remember to log the final tally.
+
+This method should:
+  - Not accept any arguments.
+  - Initially create a constant `gymTally`, which is an object that has two 
+    properties: `completed` and `incomplete`, both of which are initially set to 0.
+  - Iterate through the objects in the `game.gyms` array and update the 
+    properties on `gymTally` as follows: 
+    - `completed` should count how many gyms in the array have a value of `true` 
+      for their `completed` property. 
+    - `incomplete` should count how many gyms in the array have a value of 
+      `false` for their `completed` property.
+  - Log the value of `gymTally`.
+  - The method should not return anything.
+
+For example, if five gym objects have a value of `true` on their `completed` property and three gym objects have a value of `false` on their `completed` property, the logged value would be: `{ completed: 5, incomplete: 3 }`.
+
+Solve Exercise 13 here:
+*/
+console.log("Exercise 13 Output");
+
+game.gymStatus = () => {
+  const gymTally = {
+    completed: 0,
+    incomplete: 0,
+  };
+  for (let gym of game.gyms) {
+    if (gym.completed) gymTally.completed++;
+    else gymTally.incomplete++;
+  }
+  console.log(gymTally);
+};
+
+game.gymStatus();
