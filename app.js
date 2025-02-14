@@ -57,3 +57,37 @@ for (let start of pokemon) {
 }
 console.log("game.party array after adding starter pokemon:");
 console.log(game.party);
+
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+
+Solve Exercise 5 here:
+*/
+// I will consider different types of pokemon+ only add if hp>70
+let hasPsychic = false;
+let hasGround = false;
+let hasFighting = false;
+let count = 0;
+for (let pokemo of pokemon) {
+  if (count === 3) break;
+  if (pokemo.hp > 70) {
+    if (pokemo.type === "psychic" && !hasPsychic) {
+      game.party.push(pokemo);
+      hasPsychic = true;
+      count++;
+    } else if (pokemo.type === "ground" && !hasGround) {
+      game.party.push(pokemo);
+      hasGround = true;
+      count++;
+    } else if (pokemo.type === "fighting" && !hasFighting) {
+      game.party.push(pokemo);
+      hasFighting = true;
+      count++;
+    }
+  }
+}
+console.log("Exercise 5 Output:");
+console.log(game.party);
