@@ -315,3 +315,19 @@ Solve Exercise 16 here:
 */
 console.log("Exercise 16 Output");
 console.log(game);
+
+/*
+Exercise 17
+1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
+2. You'll need to use the `.sort()` method. How does the compare function work in sorting numbers?
+
+
+Solve Exercise 17 here:
+*/
+
+// the compare function returns either a positive number, negative number or zero
+// if the number is negative, then the first element comes before the second
+// else if the number is positive, then the second element comes before the first
+// else both have the same sorted order so either could come first or second
+game.party.sort((a, b) => b.hp - a.hp);
+console.log(game.party);
